@@ -58,12 +58,8 @@ WSGI_APPLICATION = 'microservice.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_DATABASE', default='mydatabase'),
-        'USER': os.environ.get('MYSQL_USER', default=''),
-        'PASSWORD': os.environ.get('MYSQL_PASSWORD', default=''),
-        'HOST': os.environ.get('MYSQL_HOST', default='127.0.0.1'),
-        'PORT': int(os.environ.get('MYSQL_PORT', default=3306)),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'mydatabase',
 
     }
 }

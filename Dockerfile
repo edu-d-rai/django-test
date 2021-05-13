@@ -6,7 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # add curl for poetry
-RUN apk update && apk add gcc python3-dev musl-dev curl  mariadb-dev
+RUN apk update && apk add gcc python3-dev musl-dev curl  
 
 COPY ./pyproject.toml ./
 
@@ -30,7 +30,7 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 # Copy dependencies from builder image
-RUN apk update && apk add --no-cache libpq mariadb-connector-c-dev
+RUN apk update && apk add --no-cache libpq 
 
 COPY --from=builder /usr/src/app/wheels /wheels
 COPY --from=builder /usr/src/app/requirements.txt .
@@ -45,4 +45,4 @@ USER app
 
 RUN python manage.py collectstatic --noinput
 
-CMD sleep 15 && gunicorn microservice.wsgi:application --bind 0.0.0.0:8000
+CMD gunicorn microservice.wsgi:application --bind 0.0.0.0:8000

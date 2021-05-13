@@ -5,20 +5,7 @@ This app was bootstrapped with [Imagine.ai](https://imagine.ai) 💛
 
 ### Run the app in terminal
 
-1. Start a MySQL database server on your machine or in the cloud.
-2. Set the following environment variables in your terminal.
-
-```
-export MYSQL_HOST=<address-where-database-running>
-export MYSQL_PORT=<port-where-database-running>
-export MYSQL_DATABASE=<database-name>
-export MYSQL_USER=<username-for-database>
-export MYSQL_PASSWORD=<password-to-database>
-// root password is only needed if using docker
-MYSQL_ROOT_PASSWORD=<root-password-to-database>
-```
-
-3. Install packages and start the application server.
+Install packages and start the application server.
 
 ```
 $ make install
